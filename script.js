@@ -46,7 +46,7 @@
 // }
 
 // Initialise an empty array with the variable name todoItems
-
+const todoItems = [];
 // Function to add a todo to the list
 // It should accept a string as a parameter (text of the todo item)
 // and it should add a new todo item to the todoItems array
@@ -55,6 +55,11 @@
 // the function does not need to return anything
 function addToDoItem(text) {
   // Implement the logic to add a task here
+  const addTodo = {
+    id: todoItems.length,
+    text: "This is a todo item",
+    completed: false,
+  }
 
   console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
 }
