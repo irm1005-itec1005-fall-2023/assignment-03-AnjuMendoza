@@ -55,13 +55,11 @@ const todoItems = [];
 // the function does not need to return anything
 function addToDoItem(text) {
   // Implement the logic to add a task here
-  const addTodo = {
+  const newTodo = {
     id: todoItems.length,
     text: "This is a todo item",
     completed: false,
   }
-
-  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
 }
 
 // Function to remove a todo to the list
@@ -71,8 +69,11 @@ function addToDoItem(text) {
 // the function does not need to return anything
 function removeToDoItem(todoId) {
   // Implement the logic to add a task here
-
-  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+  for (let i = 0; i <todoItems.length; i++) {
+    if (todoItems[i].id === todoId) {
+      todoItems.splice(index,1);
+    }
+  }
 }
 
 // Function to mark a task as completed
