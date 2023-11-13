@@ -70,11 +70,7 @@ function addToDoItem(text) {
 // the function does not need to return anything
 function removeToDoItem(todoId) {
   // Implement the logic to add a task here
-  const indexToRemove = todoItems.findIndex((todo) => todo.id === todoId);
-
-  if (indexToRemove !== -1) {
-    todoItems.splice(indexToRemove, 1);
-  }
+  todoItems.splice(todoItems.findIndex((todo) => todo.id === todoId), 1);
 }
 
 // Function to mark a task as completed
