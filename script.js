@@ -62,7 +62,6 @@ function addToDoItem(text) {
   }
   todoItems.push(newTodo);
 }
-
 // Function to remove a todo to the list
 // It should accept a number as a parameter (id of the todo item)
 // Loop through the array of todos, and when you find the todo item with the id
@@ -80,13 +79,11 @@ function removeToDoItem(todoId) {
 // the function does not need to return anything
 function markToDoItemAsCompleted(todoId) {
   // Implement the logic to mark a task as completed here
-  todoItems.forEach((todoId) => {
-    if (todo.id === todoID) {
-      todo.completed = true;
-    }
-  });
+  const todo = todoItems.find((item) => item.id === todoId);
+  if (todo) {
+    todo.completed = true;
+  }
 }
-
 // Function to delete a task from the array
 // It should accept a number as a parameter (id of the todo item)
 // Loop through the array of todos, and when you find the todo item with the id
@@ -103,14 +100,7 @@ function deleteToDoItem(todoId) {
 // as completed, remove it completely from the array
 function clearCompletedTasks() {
   // Implement the logic to clear completed tasks here
-  let completedTasks = [];
-
-  for (let i = 0; i < todoItems.length; i++) {
-    if (!todoItems[i].completed) {
-      completedTasks.push(todoItems[i]);
-    }
-    todoItems = completedTasks;
-  }
+  todoItems = todoItems.filter((todo) => !todo.completed);
 }
 
 // You can write your own tests here if you would like to test
