@@ -60,6 +60,7 @@ function addToDoItem(text) {
     text: "This is a todo item",
     completed: false,
   }
+  todoItems.push(newTodo);
 }
 
 // Function to remove a todo to the list
@@ -69,10 +70,10 @@ function addToDoItem(text) {
 // the function does not need to return anything
 function removeToDoItem(todoId) {
   // Implement the logic to add a task here
-  for (let i = 0; i <todoItems.length; i++) {
-    if (todoItems[i].id === todoId) {
-      todoItems.splice(index,1);
-    }
+  const indexToRemove = todoItems.findIndex((todo) => todo.id === todoId);
+
+  if (indexToRemove !== -1) {
+    todoItems.splice(indexToRemove, 1);
   }
 }
 
@@ -83,8 +84,11 @@ function removeToDoItem(todoId) {
 // the function does not need to return anything
 function markToDoItemAsCompleted(todoId) {
   // Implement the logic to mark a task as completed here
-
-  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+  todoItems.forEach((todoId) => {
+    if (todo.id === todoID) {
+      todo.completed = true;
+    }
+  });
 }
 
 // Function to delete a task from the array
